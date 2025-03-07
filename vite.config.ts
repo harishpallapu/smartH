@@ -7,15 +7,15 @@ import { defineConfig } from 'vite';
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-    build: {
-    outDir: 'dist',  // Final build folder
-    assetsDir: '',    // No separate assets directory (CSS will be placed under dist)
+base: '/smarthealth_3/',  // Set the base path for deployment
+  build: {
+    outDir: 'dist',
+    assetsDir: '',
     rollupOptions: {
       output: {
-        // Make sure both JavaScript and CSS go into the `smarthealth` folder
-        entryFileNames: 'smarthealth/[name].js',  // JavaScript files will go into smarthealth/
-        chunkFileNames: 'smarthealth/[name].js',  // Chunks go into smarthealth/
-        assetFileNames: 'smarthealth/[name][extname]'  // CSS (and other assets) will go into smarthealth/
+        entryFileNames: 'smarthealth/App.css',
+        chunkFileNames: 'smarthealth/index.css',
+        assetFileNames: 'smarthealth/main.ts',
       }
     }
   },
