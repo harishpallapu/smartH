@@ -13,9 +13,9 @@ base: '/smarthealth_3/',  // Set the base path for deployment
     assetsDir: '',
     rollupOptions: {
       output: {
-        entryFileNames: 'smarthealth/App.css',
-        chunkFileNames: 'smarthealth/index.css',
-        assetFileNames: 'smarthealth/main.ts',
+        entryFileNames: 'App.css',
+        chunkFileNames: 'index.css',
+        assetFileNames: 'main.ts',
       }
     }
   },
