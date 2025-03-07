@@ -4,8 +4,10 @@ import path from "path";
 import { componentTagger } from "lovable-tagger";
 import { defineConfig } from 'vite';
 
-export default defineConfig({
-  build: {
+
+// https://vitejs.dev/config/
+export default defineConfig(({ mode }) => ({
+    build: {
     outDir: 'dist',  // Final build folder
     assetsDir: '',    // No separate assets directory (CSS will be placed under dist)
     rollupOptions: {
@@ -16,11 +18,7 @@ export default defineConfig({
         assetFileNames: 'smarthealth/[name][extname]'  // CSS (and other assets) will go into smarthealth/
       }
     }
-  }
-});
-
-// https://vitejs.dev/config/
-export default defineConfig(({ mode }) => ({
+  },
   server: {
     host: "::",
     port: 8080,
