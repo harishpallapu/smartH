@@ -1,9 +1,8 @@
-
 import React, { useState, useEffect } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Heart } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
+import { ScatterChart, Scatter, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 
 const HeartRateMonitor: React.FC = () => {
   const [heartRate, setHeartRate] = useState<number>(72);
@@ -102,8 +101,7 @@ const HeartRateMonitor: React.FC = () => {
         
         <div className="h-[180px] w-full mt-4">
           <ResponsiveContainer width="100%" height="100%">
-            <LineChart
-              data={heartRateData}
+            <ScatterChart
               margin={{
                 top: 5,
                 right: 5,
@@ -132,15 +130,15 @@ const HeartRateMonitor: React.FC = () => {
                   border: 'none' 
                 }} 
               />
-              <Line 
-                type="monotone" 
-                dataKey="value" 
-                stroke="#0ea5e9" 
-                strokeWidth={2} 
-                dot={false} 
-                activeDot={{ r: 4, strokeWidth: 0 }}
+              <Scatter
+                name="Heart Rate"
+                data={heartRateData}
+                fill="#0ea5e9"
+                line={{ stroke: '#0ea5e9', strokeWidth: 2 }}
+                shape="circle"
+                radius={4}
               />
-            </LineChart>
+            </ScatterChart>
           </ResponsiveContainer>
         </div>
         
